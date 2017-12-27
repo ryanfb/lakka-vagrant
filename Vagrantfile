@@ -12,5 +12,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :inline => "echo 'Turning off console beeps...' && grep '^set bell-style none' /etc/inputrc || echo 'set bell-style none' >> /etc/inputrc"
   config.ssh.forward_agent = true
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-  config.vm.provision "shell", :inline => "apt-get update && apt-get upgrade -y && apt-get install -y build-essential wget bc gcc-multilib libc6-dev-i386 patchutils gawk gperf zip unzip texinfo lzop xfonts-utils xsltproc bc patchutils gawk gperf zip unzip texinfo lzop xfonts-utils xfonts-utils xfonts-utils xsltproc libncurses5-dev libjson-perl git pkg-config u-boot-tools && apt-get autoremove && apt-get autoclean"
+  config.vm.provision "shell", :inline => "apt-get update && apt-get upgrade -y && apt-get install -y build-essential wget bc gcc-multilib libc6-dev-i386 patchutils gawk gperf zip unzip texinfo lzop xfonts-utils xsltproc bc patchutils gawk gperf zip unzip texinfo lzop xfonts-utils xfonts-utils xfonts-utils xsltproc libncurses5-dev libjson-perl git pkg-config u-boot-tools default-jre && apt-get autoremove && apt-get autoclean"
 end
